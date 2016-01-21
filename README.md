@@ -16,7 +16,7 @@ Complete Ubuntu 15.10 local development environment setup guide for Drupal 8. In
 6. Hosts File Configuration
 7. Database Creation And Drupal Installation
 8. IDE Installation
-9. Optional Applications
+
 
 ---
 
