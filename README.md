@@ -1,14 +1,14 @@
-#Roll-Your-Own Local Drupal Development Environment On Ubuntu 14.04 and 15.04
+#Roll-Your-Own Local Drupal Development Environment On Ubuntu 15.10
 
 ![alt text](http://drupal.org/files/images/DrupalDiver.png "Florida Drupal Users Group")
 **[Florida Drupal Users Group](https://groups.drupal.org/florida)**
 **IRC**: Freenode.org **#drupal-florida**
 
-Complete Ubuntu 14.04 local development environment setup guide for Drupal 7 & 8. Includes LAMP, git, Composer, Drush, and RVM. Also, a few optional applications are included. (Sublime Text 3, PhpStorm, Node.js, Gulp.js and HexChat) 
+Complete Ubuntu 15.10 local development environment setup guide for Drupal 8. Includes LAMP, git, Composer, Drush, and RVM. Also, a few optional applications are included. (Sublime Text 3, PhpStorm, Node.js, Gulp.js and HexChat) 
 
-**LOCAL set up only!**  Ubuntu 14.04 / LAMP / Drupal Sites Setup
+**LOCAL set up only!**  Ubuntu 15.10 / LAMP / Drupal Sites Setup
 
-1. Ubuntu 14.04 Install
+1. Ubuntu 15.10 Install
 2. Lamp Stack Installation
 3. Server Applications Setup
 4. Apache Configuration
@@ -20,7 +20,7 @@ Complete Ubuntu 14.04 local development environment setup guide for Drupal 7 & 8
 
 ---
 
-#1. Ubuntu 14.04 Install
+#1. Ubuntu 15.10 Install
 1. Create a bootable install disk or usb drive, follow directions and install Ubuntu  
 2. It is very important to write down or remember your username and password. You will use these on a regular basis  
 3. Open a terminal, click on the top left icon and type: `terminal`
@@ -66,7 +66,7 @@ $ sudo visudo
 
 ___
 #2. Lamp Stack Installation
-* **[How to install Lamp server on ubuntu 14.04 by Krizna.com](http://www.krizna.com/ubuntu/install-lamp-server-ubuntu-14-04/)**
+* **[How to install Lamp server on ubuntu 15.10 by Krizna.com](http://www.krizna.com/ubuntu/install-lamp-server-ubuntu-15-10/)**
 
 1. Install Apache:
 
@@ -162,7 +162,7 @@ $ sudo service apache2 restart
 ---
 
 ###Install phpMyAdmin
-* **[How To Install and Secure phpMyAdmin on Ubuntu 14.04 by Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-14-04)**
+* **[How To Install and Secure phpMyAdmin on Ubuntu 15.10 by Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-15-10)**
 
 1. Install phpMyAdmin:
 
@@ -250,7 +250,6 @@ Enter passphrase (empty for no passphrase): [Type a passphrase]
 Enter same passphrase again: [Type passphrase again]
 ```
 
-*Extra* - If you want your old keys - put your old keys on a usb drive, navigate to the .ssh folder and replace them  
 
 ---
 
@@ -419,7 +418,7 @@ $ sudo nano /etc/apache2/mods-enabled/dir.conf
     ```PHP
     <IfModule mod_dir.c>
     
-              DirectoryIndex **index.php** index.html index.cgi index.pl index.xhtml index.htm
+              DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
     
     </IfModule>
     ```
@@ -619,32 +618,27 @@ $ sudo nano /etc/hosts
     ```Bash
 $ cd sites
 ```
-
-2. Clone Drupal 7:
-    
-    ```Bash
-$ git clone --branch 7.x http://git.drupal.org/project/drupal.git
-```
+2. Clone Drupal 8
 
     For Drupal 8:
     
     ```Bash
-$ git clone --branch 8.x http://git.drupal.org/project/drupal.git
+$ git clone --branch 8.0.x http://git.drupal.org/project/drupal.git
 ```
 
-3. Change the name of the cloned drupal directory to the name of the new site:
+4. Change the name of the cloned drupal directory to the name of the new site:
     
     ```Bash
 $ mv drupal newsite.dev
 ```
 
-4. Change to newsite.dev/sites/default directory:
+5. Change to newsite.dev/sites/default directory:
     
     ```
 $ cd newsite.dev/sites/default
 ```
 
-5. Copy default.settings.php
+6. Copy default.settings.php
     
     ```Bash
 $ cp default.settings.php settings.php
@@ -705,14 +699,14 @@ mysql> quit
 
 ---
 
-###Create site via drush (works with Drupal 7, but still needs testing on Drupal 8)
+###Create site via drush (with Drupal 8)
 1. Change to your sites directory: (Hopefully you created a symlink. If you didn’t then use $ cd /var/www/html):
 
     ```Bash
 $ cd sites
 ```
 
-2. Download Drupal (can also do drupal-8.x):
+2. Download Drupal (drupal-8.0.x):
 
     ```Bash
 $ drush dl drupal --drupal-project-rename=site_directory_name
@@ -905,12 +899,7 @@ $ drush updb
 
 ---
 
-###Important drush command change
-####Drupal 7:
 
-```bash
-	$ drush cc all
-```
 
 ####Drupal 8:
 
@@ -953,11 +942,7 @@ $ sudo apt-get install sublime-text-installer
 
 ---
 
-###Configuration Information For PhpStorm Users
-* **[Setting up PhpStorm for Drupal's Coding Standards (Drupal.org)](https://www.drupal.org/node/1962108)**
-* **[Drupal Development using PhpStorm (PhpStorm Documentation)](https://confluence.jetbrains.com/display/PhpStorm/Drupal+Development+using+PhpStorm#DrupalDevelopmentusingPhpStorm-CoderandPHPCodeSnifferIntegration)**
 
----
 
 #9. Optional Applications
 
